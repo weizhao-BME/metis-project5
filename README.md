@@ -78,15 +78,23 @@ The dataset was downloaded from ([Moosavi et al. (2019a)](https://arxiv.org/pdf/
 
 #### Data cleaning and preprocessing
 
+##### Data cleaning 
+
 All the accidents with missing values, regardless of features, were excluded to avoid the influence of manual operation on the performance of the neural network.  
+
+For the point of interest, the features with very limited number of samples were excluded. First, the percentage of "True" values for each point of interest feature was calculated. Next, a threshold using the 75th percentile of all these percentage values of point of interest features were determined. Last, the point of interest features whose percentage of "True" values was smaller than the threshold were excluded. The final retained features included "Crossing", "Junction", "Traffic_Signal".
+
+All other useless columns were deleted. They included ID, Source, TMC, Start_Time, End_Time, End_Lat, End_Lng, Number, Street, City, County, Country, Zipcode, Timezone, Airport_Code, Wind_Chill(f),  Turning_Loop, Sunrise_Sunset, Civil_Twilight, Nautical_Twilight, Astronomical_Twilight, Weather_Timestamp, Description.
+
+##### Data preprocessing
 
 The start time of accidents was converted to representative time periods, i.e. early morning, morning, afternoon, evening, night, and late night. The date and month when each accident occurred were converted to the name of day and season, respectively. 
 
 Because various weather conditions were reported in the data, only the most common weather conditions were considered. They included clear, fair, cloudy, windy, rain, snow, obscuration, and sand storm. Wind directions were simplified to north, south, west, east, northeast, northwest, southeast, and southwest.
 
-For the point of interest, the features with very limited number of samples were excluded. First, the percentage of "True" values for each point of interest feature was calculated. Next, a threshold using the 75th percentile of all these percentage values of point of interest features were determined. Last, the point of interest features whose percentage of "True" values was smaller than the threshold were excluded. The final retained features included "Crossing", "Junction", "Traffic_Signal".
+A box-cox transformation was applied to the continuous features, i.e. Visibility (mi), Pressure(in), Wind_Speed(mph), Precipitation(in), to mitigate their skewness and make the data distribution of these features more Gaussian-like.
 
-All other useless columns were removed. They included ID, Source, TMC, Start_Time, End_Time, End_Lat, End_Lng, Number, Street, City, County, Country, Zipcode, Timezone, Airport_Code, Wind_Chill(f),  Turning_Loop, Sunrise_Sunset, Civil_Twilight, Nautical_Twilight, Astronomical_twilight, Weather_Timestamp, Description.
+A one hot encoding was performed for the categorical features whose values were not in Boolean type.  
 
 
 
