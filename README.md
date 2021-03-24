@@ -130,11 +130,11 @@ Regardless of severity, most accidents occurred in the nice weather such as clea
 
 
 
+[metis-project5/confusion_mat.svg at main · weizhao-BME/metis-project5 (github.com)]()
 
 
 
-
-<img src="https://github.com/weizhao-BME/metis-project5/blob/main/figures/confusion_mat.svg.svg" alt="Figure 7" width="400"/>
+<img src="https://github.com/weizhao-BME/metis-project5/blob/main/figures/confusion_mat.svg" alt="Figure 7" width="400"/>
 
 
 
