@@ -126,6 +126,18 @@ Regardless of severity, most accidents occurred in the nice weather such as clea
 
 <img src="https://github.com/weizhao-BME/metis-project5/blob/main/figures/accident_freq_weather.svg" alt="Figure 6" width="400"/>
 
+#### Performance of neural network
+
+
+
+
+
+
+
+<img src="https://github.com/weizhao-BME/metis-project5/blob/main/figures/confusion_mat.svg.svg" alt="Figure 7" width="400"/>
+
+
+
 ---
 
 ### Conclusions
