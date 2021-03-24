@@ -14,7 +14,7 @@ Final presentation is posted [here](https://github.com/weizhao-BME/metis-project
 
 ### **Introduction** 
 
-Traffic accidents are a leading cause of death in the USA for adults and a leading cause of nonnatual death for US citizens. There were 33,244 fatal motor vehicle crashes in the United States in 2019 in which 36,096 deaths occurred. This resulted in 11.0 deaths per 100,000 people and 1.11 deaths per 100 million miles traveled [(iihs.org)](https://www.iihs.org/topics/fatality-statistics/detail/state-by-state). An additional 4.4 million are injured seriously enough to require medical attention. All the evidence suggests that the U.S. suffers the most road crash deaths of any high-income country, about 50% higher than similar countries in Western Europe, Canada, Australia and Japan [(asirt.org)](https://www.asirt.org/safe-travel/road-safety-facts/). Therefore, it is urgent to understand the underlying mechanisms of the occurrence of traffic accidents. This study aimed to investigate the relevance of accident occurrence to time, name of day, season, and weather conditions and to build a neural network for instantaneous prediction of accident severity.  
+Traffic accidents are a leading cause of death in the USA for adults and a leading cause of nonnatual death for US citizens. There were 33,244 fatal motor vehicle crashes in the USA in 2019 in which 36,096 deaths occurred. This resulted in 11.0 deaths per 100,000 people and 1.11 deaths per 100 million miles traveled [(iihs.org)](https://www.iihs.org/topics/fatality-statistics/detail/state-by-state). An additional 4.4 million are injured seriously enough to require medical attention. All the evidence suggests that the USA suffers the most road crash deaths among high-income countries, about 50% higher than similar countries in Western Europe, Canada, Australia and Japan [(asirt.org)](https://www.asirt.org/safe-travel/road-safety-facts/). Therefore, it is urgent to understand the underlying mechanisms of the occurrence of traffic accidents. This study aimed to investigate the relevance of accident occurrence to time, name of day, season, and weather conditions and to build a neural network for instantaneous prediction of accident severity.  
 
 ***********************
 
@@ -80,37 +80,33 @@ The dataset was downloaded from ([Moosavi et al. (2019a)](https://arxiv.org/pdf/
 
 ##### Data cleaning 
 
-All the accidents with missing values, regardless of features, were excluded to avoid the influence of manual operation on the performance of the neural network.  
-
-For the point of interest, the features with very limited number of samples were excluded. First, the percentage of "True" values for each point of interest feature was calculated. Next, a threshold using the 75th percentile of all these percentage values of point of interest features were determined. Last, the point of interest features whose percentage of "True" values was smaller than the threshold were excluded. The final retained features included "Crossing", "Junction", "Traffic_Signal".
-
-All other useless columns were deleted. They included ID, Source, TMC, Start_Time, End_Time, End_Lat, End_Lng, Number, Street, City, County, Country, Zipcode, Timezone, Airport_Code, Wind_Chill(f),  Turning_Loop, Sunrise_Sunset, Civil_Twilight, Nautical_Twilight, Astronomical_Twilight, Weather_Timestamp, Description.
+First, All the accidents with missing values, regardless of features, were excluded to avoid the influence of manual operation on the performance of the neural network.  Next, for the point of interest, the features with very limited number of samples were excluded. First, the percentage of "True" values for each point of interest feature was calculated. Next, a threshold using the 75th percentile of all these percentage values of point of interest features were determined. Last, the point of interest features whose percentage of "True" values was smaller than the threshold were excluded. The final retained features included "Crossing", "Junction", "Traffic_Signal". Finally, all other useless columns were deleted. They included ID, Source, TMC, Start_Time, End_Time, End_Lat, End_Lng, Number, Street, City, County, Country, Zipcode, Timezone, Airport_Code, Wind_Chill(f),  Turning_Loop, Sunrise_Sunset, Civil_Twilight, Nautical_Twilight, Astronomical_Twilight, Weather_Timestamp, Description.
 
 ##### Data preprocessing
 
-The start time of accidents was converted to representative time periods, i.e. early morning, morning, afternoon, evening, night, and late night. The date and month when each accident occurred were converted to the name of day and season, respectively. 
-
-Because various weather conditions were reported in the data, only the most common weather conditions were considered. They included clear, fair, cloudy, windy, rain, snow, obscuration, and sand storm. Wind directions were simplified to north, south, west, east, northeast, northwest, southeast, and southwest.
-
-A box-cox transformation was applied to the continuous features, i.e. Visibility (mi), Pressure(in), Wind_Speed(mph), Precipitation(in), to mitigate their skewness and make the data distribution of these features more Gaussian-like.
-
-A one hot encoding was performed for the categorical features whose values were not in Boolean type.  
-
-
-
-
-
-
-
-
+First, the start time of accidents was converted to representative time periods, i.e. early morning, morning, afternoon, evening, night, and late night. The date and month when each accident occurred were converted to the name of day and season, respectively. Second, because various weather conditions were reported in the data, only the most common weather conditions were considered. They included clear, fair, cloudy, windy, rain, snow, obscuration, and sand storm. Wind directions were simplified to north, south, west, east, northeast, northwest, southeast, and southwest. Third, a box-cox transformation was applied to the continuous features, i.e. Visibility (mi), Pressure(in), Wind_Speed(mph), Precipitation(in), to mitigate their skewness and make the data distribution of these features more Gaussian-like. Fourth, a one hot encoding was performed for the categorical features whose values were not in Boolean type. Next, the entire dataset was split into training and testing dataset (80% vs. 20%). For the training dataset, 80% was used as the training dataset and the remaining 20% was used as validation dataset. Finally, the continuous variables in each dataset was standardized to avoid poor performance due to large unstable weight during leaning and minimize generalization error ([REF](https://machinelearningmastery.com/how-to-improve-neural-network-stability-and-modeling-performance-with-data-scaling/)). 
 
 #### Exploratory analysis
 
-First, for each severity level and state, the number of accidents was counted and divided by the total number of accidents for the corresponding severity to calculate the accident rate for each state. Second, 
+First, for each severity level and state, the number of accidents was counted and divided by the total number of accidents for the corresponding severity to calculate the accident rate for each state. Second,  for each severity , the percentage of accident occurrence by time period, name of day, season, and weather was calculated, respectively.
 
-#### Featuring engineering
+#### Design and implementation of neural network
 
-xx
+A neural network with 3 three fully connected hidden layers were created with a pyramid structure to allow a dimension reduction towards the output layer ([REF](https://www.cs.toronto.edu/~hinton/science.pdf)). This structure allows the number of hidden units to be sequentially halved in the subsequent layer. 
+
+
+
+![Fig. 1](https://github.com/weizhao-BME/metis-project5/blob/main/figures/neural_net.png)
+
+
+
+[metis-project5/neural_net.png at main · weizhao-BME/metis-project5 (github.com)](https://github.com/weizhao-BME/metis-project5/blob/main/figures/neural_net.png)
+
+
+
+
+
+
 
 
 
