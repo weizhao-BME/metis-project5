@@ -130,7 +130,7 @@ Regardless of severity, most accidents occurred in the nice weather such as clea
 
 <img src="https://github.com/weizhao-BME/metis-project5/blob/main/figures/accident_freq_weather.svg" alt="Figure 6" width="400"/>
 
-The police department may distribute their patrols according to this analysis. For example, a increase in police patrols may be needed in California and Florida because they had the accidents ranging across all the severity levels during 2016-2020. More patrols would be required in the morning and evening to reduce the number of accidents. In addition, increasing patrols at night and late night may reduce the number of severe accidents. The police department may pay more attention to winter to reduce the occurrence of moderate to severe accidents and may need to increase patrols in nice weather, such as clear, fair, and cloudy to reduce the occurrence of accidents. 
+The police department may distribute their patrols according to this analysis. For example, an increase in police patrols may be needed in California and Florida because they had the accidents ranging across all the severity levels during 2016-2020. More patrols would be required in the morning and evening to reduce the number of accidents. In addition, increasing patrols at night and late night may reduce the number of severe accidents. The police department may pay more attention to winter to reduce the occurrence of moderate to severe accidents and may need to increase patrols in nice weather, such as clear, fair, and cloudy to reduce the occurrence of accidents. 
 
 #### Performance of neural network
 
