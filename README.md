@@ -132,13 +132,13 @@ The confusion matrix below demonstrates the performance of the neural network us
 
 <img src="https://github.com/weizhao-BME/metis-project5/blob/main/figures/confusion_mat.svg" alt="Figure 7" width="400"/>
 
-|              | **Recall** |
-| ------------ | ---------- |
-| Mild         | 0.75       |
-| Moderate     | 0.59       |
-| Serious      | 0.65       |
-| Severe       | 0.53       |
-| **Average ** | 0.63       |
+|             | **Recall** |
+| ----------- | ---------- |
+| Mild        | 0.75       |
+| Moderate    | 0.59       |
+| Serious     | 0.65       |
+| Severe      | 0.53       |
+| **Average** | 0.63       |
 
 But it is worth noticing that there are a certain numbers of misclassification. This could be a result of the data itself, where there is not a clear boundary for each severity. 
 
