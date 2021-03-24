@@ -156,4 +156,5 @@ Nevertheless, the neural network offers a useful tool for the police department 
 
 ### Conclusions
 
-In this analysis, the relevance of accident occurrence to time period, location, season, and weather has been investigated. These results provide the police department with useful information to reduce the occurrence of traffic accidents. And the neural network will serve as powerful tool for instantaneous prediction of accident severity. 
+In this analysis, the relevance of accident occurrence to time period, location, season, and weather has been investigated. These results provide the police department with useful information to reduce the occurrence of traffic accidents. And the neural network will serve as powerful tool for instantaneous prediction of accident severity. Future work may include natural language processing for the descriptions about accidents to enhance the predictive power of the neural network. Also, the neural network could be retrained to predict the traffic delay and distance affected by accidents. 
+
