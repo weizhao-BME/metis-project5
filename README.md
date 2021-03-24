@@ -106,15 +106,23 @@ A batch size of 1024 was adopted in the training process. This resulted in about
 
 #### Exploratory results
 
-
+The figure below shows accident rate by state. It demonstrates that Arizona ranked as the first state in terms of mild accidents. California and Florida had accidents ranging across all severity levels. Texas had moderate to serious accidents. And Georgia and New York had serious and severe accidents. 
 
 <img src="https://github.com/weizhao-BME/metis-project5/blob/main/figures/state_accident_rate.svg" alt="Figure 3" width="500"/>
 
+For the occurrence of accidents by time period (the figure below), most accidents occurred in the morning and evening, as these two periods are traffic peak. If accidents occurred at night or late night, they tended to be severe. 
+
 <img src="https://github.com/weizhao-BME/metis-project5/blob/main/figures/accident_freq_daypart.svg" alt="Figure 4" width="500"/>
+
+More accidents typically occurred on weekdays, regardless of severity, as shown in the figure below. But if accidents occurred on weekends, they were more likely to be severe cases. 
 
 <img src="https://github.com/weizhao-BME/metis-project5/blob/main/figures/accident_freq_dayname.svg" alt="Figure 5" width="500"/>
 
+Most mild accidents occurred in the summer. Most moderate to severe accidents occurred in the winter.
+
 <img src="https://github.com/weizhao-BME/metis-project5/blob/main/figures/accident_freq_season.svg" alt="Figure 6" width="500"/>
+
+Regardless of severity, most accidents occurred in the nice weather such as clear, fair, and cloudy. But when accidents occurred in windy, rainy, snowy, and obscure weather, they were most likely to be serious.
 
 <img src="https://github.com/weizhao-BME/metis-project5/blob/main/figures/accident_freq_weather.svg" alt="Figure 6" width="500"/>
 
