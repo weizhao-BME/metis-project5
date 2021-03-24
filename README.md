@@ -92,29 +92,31 @@ First, for each severity level and state, the number of accidents was counted an
 
 #### Design and implementation of neural network
 
-A neural network with 3 three fully connected hidden layers were created with a pyramid structure to allow a dimension reduction towards the output layer ([REF](https://www.cs.toronto.edu/~hinton/science.pdf)). This structure allows the number of hidden units to be sequentially halved in the subsequent layer. A relu activation function along with "he_uniform" kernel initializer followed by a batch normalization were utilized on each hidden layer ([REF](https://medium.com/@sakeshpusuluri123/activation-functions-and-weight-initialization-in-deep-learning-ebc326e62a5c)). Batch normalization stabilizes the learning process and dramatically reduce the learning time ([REF](https://machinelearningmastery.com/batch-normalization-for-training-of-deep-neural-networks/)). On the output layer, a softmax activation function was employed for severity classification. An early stopping was used to prevent overfitting and ensure sufficient training epochs.
+A neural network with 3 three fully connected hidden layers were created with a pyramid structure to allow a dimension reduction towards the output layer ([REF](https://www.cs.toronto.edu/~hinton/science.pdf)). This structure allows the number of hidden units to be sequentially halved on the subsequent layer. A relu activation function along with "he_uniform" kernel initializer followed by a batch normalization were utilized on each hidden layer ([REF](https://medium.com/@sakeshpusuluri123/activation-functions-and-weight-initialization-in-deep-learning-ebc326e62a5c)). Batch normalization stabilizes the learning process and dramatically reduce the learning time ([REF](https://machinelearningmastery.com/batch-normalization-for-training-of-deep-neural-networks/)). On the output layer, a softmax activation function was employed for severity classification. An early stopping which monitors validation loss with patience of 10 was used to prevent overfitting and ensure sufficient training epochs.
 
 <img src="https://github.com/weizhao-BME/metis-project5/blob/main/figures/neural_net.png" alt="Figure 1" width="700"/>
 
+Because the data has highly imbalanced class distribution as shown in the figure below, the weight of each accident severity was calculated using scikit-learn and assigned to each class in the training process. 
 
+<img src="https://github.com/weizhao-BME/metis-project5/blob/main/figures/case_prctage.svg" alt="Figure 2" width="700"/>
 
-Because the data has highly imbalanced class distribution, the weight of each accident severity was calculated using scikit-learn and assigned to each class in the training process. 
-
-
-
-<img src="https://github.com/weizhao-BME/metis-project5/blob/main/figures/neural_net.png" alt="Figure 1" width="700"/>
-
-
-
----
+A batch size of 1024 was adopted in the training process. This resulted in about 2.6k batches, which have sufficient generalization ability ([REF](https://towardsdatascience.com/implementing-a-batch-size-finder-in-fastai-how-to-get-a-4x-speedup-with-better-generalization-813d686f6bdf)). With a learning rate of 1e-6, the neural network was trained in 50 epochs which led to the most balanced performance for the four severity levels. 
 
 ### Results and Discussion
 
-XX
+#### Exploratory results
 
 
 
+<img src="https://github.com/weizhao-BME/metis-project5/blob/main/figures/state_accident_rate.svg" alt="Figure 3" width="700"/>
 
+<img src="https://github.com/weizhao-BME/metis-project5/blob/main/figures/accident_freq_daypart.svg" alt="Figure 4" width="700"/>
+
+<img src="https://github.com/weizhao-BME/metis-project5/blob/main/figures/accident_freq_dayname.svg" alt="Figure 5" width="700"/>
+
+<img src="https://github.com/weizhao-BME/metis-project5/blob/main/figures/accident_freq_season.svg" alt="Figure 6" width="700"/>
+
+<img src="https://github.com/weizhao-BME/metis-project5/blob/main/figures/accident_freq_weather.svg" alt="Figure 6" width="700"/>
 
 ---
 
