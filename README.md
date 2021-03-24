@@ -14,7 +14,7 @@ Final presentation is posted [here](https://github.com/weizhao-BME/metis-project
 
 ### **Introduction** 
 
-Traffic accidents are a leading cause of death in the USA for adults and a leading cause of nonnatual death for US citizens. There were 33,244 fatal motor vehicle crashes in the USA in 2019 in which 36,096 deaths occurred. This resulted in 11.0 deaths per 100,000 people and 1.11 deaths per 100 million miles traveled [(iihs.org)](https://www.iihs.org/topics/fatality-statistics/detail/state-by-state). An additional 4.4 million are injured seriously enough to require medical attention. All the evidence suggests that the USA suffers the most road crash deaths among high-income countries, about 50% higher than similar countries in Western Europe, Canada, Australia and Japan [(asirt.org)](https://www.asirt.org/safe-travel/road-safety-facts/). Therefore, it is urgent to understand the underlying mechanisms of the occurrence of traffic accidents. This study aimed to investigate the relevance of accident occurrence to time, name of day, season, and weather conditions and to build a neural network for instantaneous prediction of accident severity.  
+Traffic accidents are a leading cause of death in the USA for adults and a leading cause of nonnatual death for US citizens. There were 33,244 fatal motor vehicle crashes in the USA in 2019 in which 36,096 deaths occurred. This resulted in 11.0 deaths per 100,000 people and 1.11 deaths per 100 million miles traveled [(iihs.org)](https://www.iihs.org/topics/fatality-statistics/detail/state-by-state). An additional 4.4 million are injured seriously enough to require medical attention. All the evidence suggests that the USA suffers the most road crash deaths among high-income countries, about 50% higher than similar countries in Western Europe, Canada, Australia and Japan [(asirt.org)](https://www.asirt.org/safe-travel/road-safety-facts/). Therefore, it is urgent to understand the underlying mechanisms of the occurrence of traffic accidents. This analysis aimed to investigate the relevance of accident occurrence to time, name of day, season, and weather conditions and to build a neural network for instantaneous prediction of accident severity.  
 
 ***********************
 
@@ -22,7 +22,7 @@ Traffic accidents are a leading cause of death in the USA for adults and a leadi
 
 #### Data acquisition
 
-The dataset was downloaded from ([Moosavi et al. (2019a)](https://arxiv.org/pdf/1909.09638.pdf); [Moosavi et al. (2019b)](https://arxiv.org/pdf/1906.05409.pdf)), where the authors collected the data from MapQuest and bing and are continuously updating the dataset. The dataset includes about 4.2 million traffic accidents which covers 49 states of the USA. All the features are listed below [(REF)](https://smoosavi.org/datasets/us_accidents). 
+The dataset was downloaded from ([Moosavi et al. (2019a)](https://arxiv.org/pdf/1909.09638.pdf); [Moosavi et al. (2019b)](https://arxiv.org/pdf/1906.05409.pdf)), where the authors collected the data from MapQuest and bing and are continuously updating the dataset. The dataset includes about 4.2 million traffic accidents which covers 49 states of the USA from 2016 to 2020. All the features are listed below [(REF)](https://smoosavi.org/datasets/us_accidents). 
 
 |  #   |       Attribute       | Description                                                  | Nullable |
 | :--: | :-------------------: | :----------------------------------------------------------- | :------: |
@@ -102,6 +102,10 @@ Because the data has highly imbalanced class distribution as shown in the figure
 
 A batch size of 1024 was adopted in the training process. This resulted in about 2.6k batches, which have sufficient generalization ability ([REF](https://towardsdatascience.com/implementing-a-batch-size-finder-in-fastai-how-to-get-a-4x-speedup-with-better-generalization-813d686f6bdf)). With a learning rate of 1e-6, the neural network was trained in 50 epochs which led to the most balanced performance for the four severity levels. 
 
+Finally, features used as the input of the neural network included locations, time, season, and weather when accidents occurred. The details can be found in this [notebook](https://github.com/weizhao-BME/metis-project5/blob/main/notebooks/modeling_3_layers.ipynb). 
+
+***********************
+
 ### Results and Discussion
 
 #### Exploratory results
@@ -126,6 +130,8 @@ Regardless of severity, most accidents occurred in the nice weather such as clea
 
 <img src="https://github.com/weizhao-BME/metis-project5/blob/main/figures/accident_freq_weather.svg" alt="Figure 6" width="400"/>
 
+The police department may distribute their police power according to this analysis. For example, a increase in police patrols may be needed in California and Florida because they had the accidents ranging across all the severity levels during 2016-2020. More police patrols would be required in the morning and evening to reduce the number of accidents. In addition, increase the patrols at night and late night may reduce the number of severe accidents. the police department may pay more attention to winter to reduce the occurrence of moderate to severe accidents and may need to increase the patrols in nice weather, such as clear, fair, and cloudy to reduce the occurrence of accidents. 
+
 #### Performance of neural network
 
 The confusion matrix below demonstrates the performance of the neural network using an independent testing dataset and suggests that the neural network has the capability to correctly predict 75.4%, 58.6%, 65.0%, and 53.3% of the mild, moderate, serious, and severe accident, respectively. The recall scores are shown below.  
@@ -140,23 +146,14 @@ The confusion matrix below demonstrates the performance of the neural network us
 | Severe      | 0.53       |
 | **Average** | 0.63       |
 
-But there are a certain number of misclassification for each severity. This could be a result of the data itself, where there is not a clear boundary for each severity. 
+But there are a certain number of misclassifications for each severity. This could be a result of the data itself, where there is not a clear boundary for each severity. 
 
 <img src="https://github.com/weizhao-BME/metis-project5/blob/main/figures/traffic_delay.png" alt="Figure 8" width="400"/>
 
-
-
-
+Nevertheless, the neural network offers a useful tool for the police department and companies working on traffic accidents to instantaneously predict the severity of accidents whenever a new case is given. In particular, the police department would have better control on the distribution of police officers because the softmax activation function returns the probability of severity. 
 
 ---
 
 ### Conclusions
 
-XX
-
-
-
-
-
-
-
+In this analysis, the relevance of accident occurrence to time period, location, season, and weather has been investigated. These results provide the police department with useful information to reduce the occurrence of traffic accidents. And the neural network will serve as powerful tool for instantaneous prediction of accident severity. 
