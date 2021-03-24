@@ -136,7 +136,7 @@ The police department may distribute their police power according to this analys
 
 The confusion matrix below demonstrates the performance of the neural network using an independent testing dataset and suggests that the neural network has the capability to correctly predict 75.4%, 58.6%, 65.0%, and 53.3% of the mild, moderate, serious, and severe accident, respectively. The recall scores are shown below.  
 
-<img src="https://github.com/weizhao-BME/metis-project5/blob/main/figures/confusion_mat.svg" alt="Figure 7" width="400"/>
+<img src="https://github.com/weizhao-BME/metis-project5/blob/main/figures/confusion_mat.svg" alt="Figure 7" width="300"/>
 
 |             | **Recall** |
 | ----------- | ---------- |
