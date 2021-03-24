@@ -96,11 +96,9 @@ A neural network with 3 three fully connected hidden layers were created with a 
 
 
 
-![Fig. 1](https://github.com/weizhao-BME/metis-project5/blob/main/figures/neural_net.png)
+![Fig. 1](https://github.com/weizhao-BME/metis-project5/blob/main/figures/neural_net.png  width="700")
 
 
-
-[metis-project5/neural_net.png at main · weizhao-BME/metis-project5 (github.com)](https://github.com/weizhao-BME/metis-project5/blob/main/figures/neural_net.png)
 
 
 
