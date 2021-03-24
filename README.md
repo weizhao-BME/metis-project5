@@ -8,7 +8,7 @@
 
 Project timeline: 3 weeks
 
-Final presentation is posted [here](https://github.com/weizhao-BME/metis-project2/blob/main/presentation/presentation_project2.pdf).
+Final presentation is posted [here](https://github.com/weizhao-BME/metis-project5/blob/main/presentation/presentation_project5.pdf).
 
 ------------
 
