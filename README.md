@@ -98,7 +98,7 @@ A neural network with 3 three fully connected hidden layers were created with a 
 
 Because the data has highly imbalanced class distribution as shown in the figure below, the weight of each accident severity was calculated using scikit-learn and assigned to each class in the training process. 
 
-<img src="https://github.com/weizhao-BME/metis-project5/blob/main/figures/case_prctage.svg" alt="Figure 2" width="500"/>
+<img src="https://github.com/weizhao-BME/metis-project5/blob/main/figures/case_prctage.svg" alt="Figure 2" width="400"/>
 
 A batch size of 1024 was adopted in the training process. This resulted in about 2.6k batches, which have sufficient generalization ability ([REF](https://towardsdatascience.com/implementing-a-batch-size-finder-in-fastai-how-to-get-a-4x-speedup-with-better-generalization-813d686f6bdf)). With a learning rate of 1e-6, the neural network was trained in 50 epochs which led to the most balanced performance for the four severity levels. 
 
