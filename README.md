@@ -140,9 +140,9 @@ The confusion matrix below demonstrates the performance of the neural network us
 | Severe      | 0.53       |
 | **Average** | 0.63       |
 
-But it is worth noticing that there are a certain numbers of misclassification. This could be a result of the data itself, where there is not a clear boundary for each severity. 
+But there are a certain number of misclassification for each severity. This could be a result of the data itself, where there is not a clear boundary for each severity. 
 
-
+<img src="https://github.com/weizhao-BME/metis-project5/blob/main/figures/traffic_delay.png" alt="Figure 8" width="400"/>
 
 
 
