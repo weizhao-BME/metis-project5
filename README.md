@@ -128,13 +128,23 @@ Regardless of severity, most accidents occurred in the nice weather such as clea
 
 #### Performance of neural network
 
-
-
-[metis-project5/confusion_mat.svg at main · weizhao-BME/metis-project5 (github.com)]()
-
-
+The confusion matrix below demonstrates the performance of the neural network using an independent testing dataset and suggests that the neural network has the capability to correctly predict 75.4%, 58.6%, 65.0%, and 53.3% of the mild, moderate, serious, and severe accident, respectively. The recall scores are shown below.  
 
 <img src="https://github.com/weizhao-BME/metis-project5/blob/main/figures/confusion_mat.svg" alt="Figure 7" width="400"/>
+
+|              | **Recall** |
+| ------------ | ---------- |
+| Mild         | 0.75       |
+| Moderate     | 0.59       |
+| Serious      | 0.65       |
+| Severe       | 0.53       |
+| **Average ** | 0.63       |
+
+But it is worth noticing that there are a certain numbers of misclassification. This could be a result of the data itself, where there is not a clear boundary for each severity. 
+
+
+
+
 
 
 
